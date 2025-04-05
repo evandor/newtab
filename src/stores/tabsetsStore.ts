@@ -16,9 +16,17 @@ export const useTabsetsStore = defineStore('tabsets', () => {
     TabsetsPersistence.save(ts)
   }
 
+  const setTabsetByName = (name: string) => {
+    const ts = tabsets.value.get(name)
+    if (ts) {
+
+    }
+  }
+
   return {
     tabsets,
     tabset,
-    setTabset
+    setTabset,
+    setTabsetByName
   }
 })

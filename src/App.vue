@@ -16,6 +16,7 @@ chrome.runtime.onMessageExternal.addListener(
         sendResponse({version: "0.0.1"});
       } else if (request.message === "setTabset") {
         useTabsetsStore().setTabset( request.tabset)
+        sendResponse({message: "done"});
       }
       // sendResponse({version: import.meta.env.PACKAGE_VERSION});
     }

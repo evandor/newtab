@@ -40,7 +40,10 @@ class TabsetsPersistence {
   }
 
   save(ts: Tabset) {
-    this.db.add(this.STORE_IDENT, ts, ts.id)
+    this.db.put(this.STORE_IDENT, ts, ts.id)
+      .catch((err:any) => {
+        console.error(err)
+      })
   }
 }
 
